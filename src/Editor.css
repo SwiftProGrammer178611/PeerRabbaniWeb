@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+.events-page {
+  background-color: #090100;
+  min-height: 100vh;
+  padding-top: 80px; /* Prevents Navbar overlap */
+}
+
+.events-header-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.main-title {
+  font-family: 'Bodoni Moda', serif;
+  font-style: italic;
+  font-size: 4rem;
+  color: #fceabb;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* --- THE FIX FOR THE SQUASHED CARDS --- */
+.events-grid-container {
+  display: flex;
+  flex-wrap: wrap;       /* Allows cards to go to the next line instead of squashing */
+  justify-content: center;
+  gap: 40px;             /* Space between cards */
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px 100px 20px;
+}
+
+/* Ensure the EventCard keeps its original size */
+.events-grid-container .event-box {
+  flex: 0 0 320px;       /* This tells the card: Stay exactly 320px wide. Do not grow. Do not shrink. */
+  min-height: 500px;
+  background: #1a1a1a;
+  border-radius: 25px;
+  border: 1px solid rgba(245, 216, 138, 0.2);
+}

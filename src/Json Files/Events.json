@@ -1,0 +1,25 @@
+{
+  "eventPageList": [
+    {
+      "title": "Sunday Mehfil",
+      "date": "Jan 15, 2026",
+      "description": "Join us for a spiritual night!",
+      "image": "/images/Image32.JPG",
+      "location": "City Hall"
+    },
+    {
+      "title": "Urs Celebration",
+      "date": "Feb 2, 2026",
+      "description": "Celebrate the life of the Saints.",
+      "image": "/images/Image32.JPG",
+      "location": "City Hall"
+    },
+    {
+      "title": "Kalaam Night",
+      "date": "Mar 10, 2026",
+      "description": "Poetry and reflection in community.",
+      "image": "/images/Image32.JPG",
+      "location": "City Hall"
+    }
+  ]
+}

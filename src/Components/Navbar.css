@@ -1,0 +1,150 @@
+/* --- BASE & PINNING --- */
+.navbar {
+  /* Reduced padding from 1.5em to 0.5em to stop the large gap */
+  padding: 0.5rem !important; 
+  background: transparent !important;
+  z-index: 2000;
+  position: sticky;
+  top: 0;
+  margin-right: 5em;
+  margin-left: 5em;
+}
+
+@media(max-width: 991px){
+  .navbar{
+    margin-right: 1em;
+    margin-left: 1em;
+    margin-top: 0.2rem;
+    position: absolute !important; /* Forces it to float over text */
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0 !important; /* Absolute elements work better with 0 margin */
+    padding: 0.2rem 1em !important; /* Use padding to keep the side gaps */
+    z-index: 9999;
+  }
+
+  
+}
+
+.navbar-glass-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 5px 25px;
+  /* Removed fixed min-height to prevent stretching */
+  min-height: unset; 
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+
+.navbar-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: white;
+  object-fit: cover;
+}
+
+/* --- DESKTOP ONLY (Centered Logo Logic) --- */
+@media (min-width: 992px) {
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2001;
+    margin: 0 !important;
+  }
+
+  .logo-spacer {
+    width: 80px; 
+  }
+
+  .nav-link {
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .nav-item-dropdown { position: relative; flex: 1; text-align: center; }
+  .dropdown-menu-custom {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(17, 17, 17, 0.95);
+    border: 1px solid rgba(245, 216, 138, 0.3);
+    border-radius: 12px;
+    padding: 10px 0;
+    min-width: 130px;
+  }
+  .nav-item-dropdown:hover .dropdown-menu-custom { display: block; }
+  .dropdown-item { color: white; display: block; padding: 8px 15px; font-size: 0.8rem; text-decoration: none; }
+}
+
+/* --- MOBILE ONLY (Fixes the Chunky Expansion) --- */
+@media (max-width: 991px) {
+  #navbarContent.collapse.show {
+    display: flex !important;
+    flex-direction: column;
+  }
+  .navbar-glass-container {
+    border-radius: 25px; /* Slightly sharper for mobile bubble */
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows menu to drop below logo/hamburger */
+    padding: 10px 20px;
+  }
+  
+  .navbar-collapse {
+    flex-basis: 100%; /* Forces menu to take its own line */
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Cleaner look than centered when expanded */
+    padding: 10px 0;
+  }
+
+  .nav-link {
+    padding: 8px 0 !important; /* Reduces vertical "chunkiness" */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .dropdown-menu-custom {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    border-left: 1px solid rgba(212, 175, 55, 0.4); /* Gold line for dropdowns */
+    margin: 5px 0 10px 5px;
+  }
+  
+  .order-1, .order-2, .order-3, .order-4, .order-5 {
+    order: 0 !important;
+  }
+}
+
+.nav-link {
+  color: #fff !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 10px 15px !important;
+  text-decoration: none;
+}
+
+.navbar-toggler-icon { filter: invert(1); }
+.custom-hamburger { border: none !important; padding: 0; }

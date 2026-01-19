@@ -1,0 +1,57 @@
+{
+  "media": {
+    "title": "KHANQAH E PEER RABBANI",
+    "arabicSymbol": "﷽",
+    "tiles": [
+      {
+        "type": "video-tile",
+        "image": "/images/Image12.JPG",
+        "link": "#"
+      },
+      {
+        "type": "square-tile",
+        "image": "/images/Image21.JPG"
+      },
+      {
+        "type": "square-tile",
+        "image": "/images/Image15.JPG"
+      },
+      {
+        "type": "square-tile",
+        "image": "/images/Image19.JPG"
+      },
+      {
+        "type": "square-tile",
+        "image": "/images/Image14.JPG"
+      },
+      {
+        "type": "square-tile",
+        "image": "/images/Image25.JPG"
+      },
+      {
+        "type": "square-tile",
+        "image": "/images/Image22.JPG"
+      },
+      {
+        "type": "square-tile",
+        "image": "/images/Image29.JPG"
+      },
+      {
+        "type": "square-tile",
+        "image": "/images/Image28.JPG"
+      },
+      {
+        "type": "square-tile",
+        "image": "/images/Image27.JPG"
+      },
+      {
+        "type": "square-tile",
+        "image": "/images/Image26.JPG"
+      },
+{
+        "type": "square-tile",
+        "image": "/images/Image25.JPG"
+      }
+    ]
+  }
+}

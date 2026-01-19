@@ -1,0 +1,264 @@
+/* 1. THE SECRET SAUCE: Applying background to the root */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #111 !important; /* Matches your Events page background */
+  color: #f5d88a;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.kalaams-page {
+  background-color: #111; /* Same as your events-page */
+  color: #f5d88a;
+  min-height: 100vh;
+  /* padding matches the events-page style */
+  /* padding: 140px 20px 80px 20px;  */
+  font-family: 'Arial', sans-serif;
+}
+
+/* 2. NAVBAR: Floating capsule style */
+.navbar-color {
+  background-color: rgba(17, 17, 17, 0.9) !important;
+  backdrop-filter: blur(15px);
+
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 90%;
+  max-width: 1200px;
+
+  z-index: 9999;
+  border: 1px solid rgba(245, 216, 138, 0.2);
+  border-radius: 20px;
+  padding: 10px 20px !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1); /* Ensures the menu is visible */
+}
+
+/* 3. TITLE: Matches your 'Upcoming Events' layout */
+.main-title {
+  
+  font-weight: 500; 
+  font-size: 3.5rem;
+  color: #fceabb; 
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+}
+
+.main-title::before, .main-title::after {
+  content: "";
+  height: 2px;
+  flex: 1;
+  background-color: rgba(252, 234, 187, 0.3);
+  max-width: 100px; /* Decorative lines */
+}
+
+/* 4. KALAAM CARDS: Matches the 'event-card' logic */
+.kalaam-card {
+  background-color: #222; /* Matches event-card */
+  border-radius: 30px; /* Match the rounded portrait look */
+  padding: 40px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kalaam-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+  border: 1px solid #f5d88a;
+}
+
+.kalaam-title {
+  font-family: 'Georgia', serif;
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.kalaam-poet {
+  color: #ccc;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+/* Play button circle */
+.play-button {
+  width: 55px;
+  height: 55px;
+  border: 1.5px solid #f5d88a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5d88a;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-title { font-size: 2.5rem; }
+  .kalaam-card { padding: 25px; width: 95%; }
+  .kalaam-title { font-size: 1.6rem; }
+}
+
+/* --- KALAAM DETAILS / LYRICS PAGE --- */
+
+.kalaam-details-page {
+  background-color: #111; /* Solid dark background, no box */
+  min-height: 100vh;
+  padding-top: 100px; 
+  padding-bottom: 100px;
+}
+
+.lyrics-container {
+  max-width: 900px; /* Slightly wider for better flow */
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Back Button - Minimalist style */
+.back-button {
+  background: transparent;
+  border: 1px solid rgba(245, 216, 138, 0.2);
+  color: rgba(245, 216, 138, 0.7);
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  margin-bottom: 60px;
+}
+
+.back-button:hover {
+  color: #f5d88a;
+  border-color: #f5d88a;
+  background: rgba(245, 216, 138, 0.05);
+}
+
+/* Title & Subtitle */
+.kalaam-details-title {
+  font-family: 'Georgia', serif;
+  font-size: 3.2rem;
+  color: #fceabb;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.kalaam-poet-subtitle {
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  margin-bottom: 30px;
+}
+
+.title-divider {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #f5d88a, transparent);
+  margin: 0 auto 50px auto;
+}
+
+/* The Poetry Lines */
+.kalaam-line {
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  line-height: 2; /* Increased for readability */
+  color: #f5d88a;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+/* Creating spacing between couplets */
+.kalaam-line:nth-child(even) {
+  margin-bottom: 40px; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .kalaam-details-titlexf {
+    font-size: 2.2rem;
+    
+  }
+  .kalaam-line {
+    font-size: 1.2rem;
+  }
+}
+
+/* --- SEARCH BAR STYLING --- */
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -10px; /* Pull it closer to the title divider */
+  margin-bottom: 60px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.03); /* Glass effect */
+  border: 1px solid rgba(212, 175, 55, 0.3); /* Subtle gold border */
+  border-radius: 50px; /* Capsule shape */
+  padding: 15px 30px;
+  color: #f5d88a;
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  outline: none;
+  transition: all 0.4s ease;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.search-input:focus {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: #d4af37; /* Bright gold on focus */
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  width: 100%;
+  max-width: 550px; /* Slight expand effect */
+}
+
+/* Customizing the Placeholder color */
+.search-input::placeholder {
+  color: rgba(245, 216, 138, 0.4);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* Responsive adjustment for search bar */
+@media (max-width: 768px) {
+  .search-input {
+    max-width: 90%;
+    padding: 12px 20px;
+  }
+}
+
+.main-title {
+  
+  font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive size */
+  font-style: italic;
+  text-align: center;
+  padding-top: 0px;
+  margin-bottom: 60px;
+  color: #fceabb;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}

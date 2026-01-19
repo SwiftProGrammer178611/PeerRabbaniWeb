@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "line1": "Peer E Rabbani Tera Hoga Chiraga Har Dum",
+    "line2": "Kyunke Yazda Ka Karam Tujhpe Nirala Dekha",
+    "cardTitle": "Rehbar-e-Kaamil",
+    "cardSubtitle": "Hazrat Sayyed Mohammed Munawwar Ali Shah",
+    "cardSuffix": "Madar Qadri Rozekari (R.A.)"
+  },
+  "events": [
+    {
+      "id": 1,
+      "title": "Sunday Mehfil",
+      "image": "/images/Image33.JPG",
+      "description": "A short description about this event goes here.",
+      "info": "Date: Jan 1, 2026 \n Location: City Hall"
+    },
+    {
+      "id": 2,
+      "title": "Peer E Rabbani Urs",
+      "image": "/images/KPR1.jpg",
+      "description": "A short description about this event goes here.",
+      "info": "Date: Feb 15, 2026 \n Location: Community Center"
+    }
+  ],
+  "gallery": {
+    "topImage": "/images/Image2.JPG",
+    "bottomImage": "/images/Image30.JPG",
+    "overlayImage": "/images/Image4.JPG",
+    "logo": "/images/logo_small.png",
+    "quoteLines": [
+      "Ye Hai Gulistan E Peer E Yazda, Rahega Yu Hi Jo Ta Qayamat, Ke Is Chaman Se, Rabbani Bhi Hai Khade hai Humsab, Salaam Lelo"
+    ],
+    "quoteAuthor": "By: Hazrat Peer Aadil"
+  },
+  "planner": {
+    "title": "Ye Hai Gulistaan Peer E Yazda, Rahega Yuhi Jo Taa Qayamat, Ke Is Chaman Se Rabbani Bhi hai, Khade Hai Hum Sab Salaam Lelo",
+    "huText": "Hu"
+  },
+  "footer": {
+    "copyright": "© 2025 Peer E Rabbani. All Rights Reserved."
+  }
+}
+
+

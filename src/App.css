@@ -1,0 +1,1339 @@
+@import url('https://fonts.googleapis.com/css2?family=Condiment&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Petit Formal Script', serif;
+
+}
+
+/* =========================
+   FIXED HERO BACKGROUND
+========================= */
+@media (max-width: 768px) {
+  .hero-fixed {
+    position: fixed;
+    inset: 0;
+
+    /* Prevent overflow */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    /* Mobile-friendly background behavior */
+    background:
+      url('/images/KPR.jpg') no-repeat center bottom / cover,
+      radial-gradient(
+        circle at center,
+        #CAA31D 0%,
+        #A38003 55%,
+        #090100 120%
+      );
+  }
+}
+
+/* .hero-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+
+  background:
+    url('/images/KPR.jpg') no-repeat center bottom / contain,
+    radial-gradient(
+      circle farthest-side at center,
+      #CAA31D 0%,
+      #A38003 50%,
+      #090100 115%
+    );
+} */
+/* Default: desktop — keep your original size */
+.hero-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+
+  background:
+    url('/images/KPR.jpg') no-repeat center bottom,
+    radial-gradient(
+      circle farthest-side at center,
+      #CAA31D -1%,
+      #886603 60%,
+      #000000 120%
+    );
+
+  background-size: 40% auto, cover;  /* original desktop size */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Small screens (mobile / tablet) */
+@media (max-width: 1024px) {
+  .hero-fixed {
+    position: relative;           /* switch from fixed for small screens */
+    background-size: contain, cover; /* ensures the human image stays visible */
+    background-position: center center; /* center the image */
+    background-attachment: scroll; /* fix mobile behavior */
+  }
+}
+
+
+
+/* =========================
+   FIXED HERO BACKGROUND
+========================= */
+
+
+@media (max-width: 768px) {
+  .hero-fixed {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    /* 2. On mobile, 'cover' makes him huge. Change to a smaller % (e.g., 85%) */
+    background:
+      url('/images/KPR.jpg') no-repeat center bottom / 85%, 
+      radial-gradient(
+        circle at center,
+        #CAA31D 0%,
+        #A38003 55%,
+        #090100 120%
+      );
+  }
+}
+
+
+/* =========================
+   PINNED SIDE BOXES
+========================= */
+
+.hero-pinned-content {
+  /* Changed from fixed to sticky */
+  position: sticky; 
+  top: 150px; /* This is where they "stop" and stay put while you scroll */
+  z-index: 5;
+  
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none;
+  height: auto; /* Prevents this div from pushing the green card down */
+}
+
+.hero-content-container {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  justify-content: space-between;
+  margin: 0 50px;
+}
+
+/* =========================
+   SIDE INFO BOXES
+========================= */
+
+.info-box {
+  background: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85);
+
+  padding: 30px;
+  border-radius: 20px;
+  width: 320px;
+
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  font-family: 'Castoro Titling', serif;
+}
+
+.info-box h3 {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-weight: 500;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* =========================
+   SCROLLING LAYER
+========================= */
+
+.scroll-layer {
+  position: relative;
+  z-index: 5;
+  /* Remove the margin-top: 100vh; it creates a massive gap */
+}
+
+/* =========================
+   CARD SCROLL SECTION
+========================= */
+
+.card-section {
+  height: 140vh; /* controls when the card appears */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 25vh;
+}
+
+/*
+   POP-UP GREEN CARD
+*/
+
+/* .hero-card {
+  background: #0b1f1d;
+  color: #f5d88a;
+
+  padding: 60px 50px;
+  width: 520px;
+
+  border-radius: 40px 40px 120px 40px;
+  border: 1px solid rgba(202, 163, 29, 0.6);
+
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.9),
+    inset 0 0 0 1px rgba(255, 215, 100, 0.3);
+
+  text-align: center;
+} */
+
+
+
+.filler {
+  height: 100vh;
+}
+.hero-dark-overlay {
+  position: fixed;
+  top: 100vh; /* 👈 hidden at load */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.35); /* adjust darkness */
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+.hero-dark-overlay {
+  position: fixed;
+  top: 0;   /* cover the entire viewport */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0); /* start fully transparent */
+  z-index: 1;
+
+  pointer-events: none;
+  transition: background 0.2s ease-out; /* smooth fade-in */
+}
+
+
+
+.hero-section {
+  position: relative;
+  height: 250vh; /* enough scroll space for sticky card */
+  padding-top: 130vh; /* card starts offscreen, scrolls into view */
+
+}
+
+.hero-inner {
+  position: sticky;     /* sticky again */
+  top: 50%;             /* stops at middle of viewport */
+  transform: translateY(-50%); /* perfect vertical centering */
+  display: flex;
+  justify-content: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+.hero-card {
+  background: #0b1f1d;
+  color: #f5d88a;
+  padding: 60px 20px;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+  text-align: center;
+  
+  /* Top-Left: Square (0), Top-Right: Rounded (50px) */
+  /* Bottom-Right: Square (0), Bottom-Left: Rounded (50px) */
+  border-radius: 0 50px 0 50px; 
+  
+  border: 1px solid rgba(245, 216, 138, 0.4);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
+}
+
+/* Gold Corner Accents */
+.hero-card::before,
+.hero-card::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f5d88a;
+}
+
+/* Sharp Top-Left Corner Decoration */
+.hero-card::before {
+  top: 15px;
+  left: 15px;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Sharp Bottom-Right Corner Decoration */
+.hero-card::after {
+  bottom: 15px;
+  right: 15px;
+  border-left: none;
+  border-top: none;
+}
+
+.hero-card h2,
+.hero-card p {
+  
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.hero-card h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-card p {
+  font-size: 2.5rem;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .hero-card {
+    width: 90%;
+    padding: 40px 15px;
+    /* Scale down the corner rounding for mobile */
+    border-radius: 0 30px 0 30px; 
+  }
+
+  .hero-card h2 {
+    font-size: 2rem; /* Much smaller for mobile screens */
+  }
+
+  .hero-card p {
+    font-size: 1.5rem; /* Much smaller for mobile screens */
+  }
+
+  .hero-card::before,
+  .hero-card::after {
+    width: 30px;
+    height: 30px;
+    border-width: 2px;
+  }
+}
+
+/* =========================
+   EVENTS SECTION
+========================= */
+
+.events-section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.events-container {
+  display: flex;
+  flex-wrap: wrap;      /* allows stacking on small screens */
+  justify-content: space-between; /* spreads boxes evenly */
+  max-width: 1200px;
+  margin: 0 auto;       /* center container horizontally */
+  gap: 40px;            /* space between boxes */
+}
+
+.event-box {
+  background: #1a1a1a; /* match background close to page */
+  border-radius: 20px;
+   min-height: 500px; 
+
+  /* Softer, more extended neuromorphic shadows */
+  box-shadow:
+    22px 22px 40px rgba(0, 0, 0, 0.65),   /* deeper bottom-right shadow */
+    -18px -18px 36px rgba(255, 255, 255, 0.08); 
+
+  padding: 20px;
+  width: 45%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.event-box:hover {
+  transform: translateY(-5px); /* subtle lift */
+  box-shadow:
+    12px 12px 20px rgba(0,0,0,0.65),
+    -12px -12px 20px rgba(255,255,255,0.08);
+}
+
+
+.event-box img {
+  width: 100%;
+  height: 300px;           /* set the visible height */
+  object-fit: cover;       /* fills container, crops excess */
+  object-position: top;    /* keeps the top of the image visible */
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+
+.event-box h3 {
+  color: #f5d88a;
+  margin-bottom: 10px;
+
+  font-size: 1.8rem;
+}
+
+.event-description {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.event-info {
+  color: #aaa;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+
+.arrow-bubble {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #f5d88a; /* outline color */
+  border-radius: 50%;          /* makes it circular */
+  background-color: transparent; 
+  color: #f5d88a;              /* arrow color */
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  right: -95%;     
+  bottom: -200%;
+}
+
+.arrow-bubble::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #f5d88a;       /* fill color on hover */
+  z-index: 0;
+  transition: width 0.3s ease;
+}
+
+.arrow-bubble span {
+  position: relative;
+  z-index: 1;
+}
+
+.arrow-bubble:hover::before {
+  width: 100%;  /* bubble fills on hover */
+  transition: width 0.3s ease;
+}
+
+.arrow-bubble:hover {
+  color: #111; /* arrow color changes when filled */
+}
+
+.events-header {
+  color: #f5d88a;
+  
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 10;
+}
+/* =========================
+   FIXED GALLERY SECTION
+========================= */
+
+.gallery-section {
+  background-color: #FFF5DD;
+  padding: 120px 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: visible; /* Changed from hidden to allow overlay to pop */
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto; /* Two main rows */
+  gap: 0; /* Let positioning handle the gaps */
+  max-width: 1100px;
+  width: 90%;
+  position: relative;
+}
+
+/* TOP RIGHT IMAGE */
+.gallery-item-top {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  width: 90%;
+  z-index: 1;
+  
+}
+
+.gallery-item-top img {
+  width: 100%;
+  display: block;
+}
+
+/* THE GOLD QUOTE BOX */
+.quote-box {
+  background-color: #B88E2F;
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  
+  /* POSITIONING: This forces the card to sit in the middle-left */
+  position: absolute;
+  top: 15%; 
+  left: 0;
+  width: 500px; /* Adjusted width */
+  z-index: 10;
+  height: auto; /* Let content define height */
+}
+
+.quote-logo {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+.quote-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* BOTTOM LEFT CONTENT */
+.gallery-item-bottom {
+  grid-column: 1;
+  grid-row: 2;
+  position: relative;
+  margin-top: 40px; /* Space between top of row 2 and bottom of row 1 */
+  z-index: 1;
+}
+
+.gallery-item-bottom img {
+  width: 90%;
+  display: block;
+}
+
+/* PLANNER TEXT (Right side bottom) */
+.planner-section {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center; /* Centers text vertically in the row */
+  padding-left: 20px;
+  text-align: left;
+}
+
+.planner-title {
+  color:rgb(206, 0, 0);
+  font-size: 3rem;
+  font-weight: 500;
+  margin: 10px 0;
+  line-height: 1.1;
+}
+
+/* THE OVERLAY IMAGE (The floating rounded one) */
+.overlay-image-container {
+  position: absolute;
+  
+  
+  bottom: -10%;  
+  right: 45%;   
+  
+  /* SIZE: Use % so it scales with the big image */
+  width: 55%;    
+  max-width: 300px; /* Prevents it from getting too huge on 4K screens */
+  z-index: 5;
+}
+
+.overlay-img {
+  width: 100%;
+  border-radius: 40px; /* The rounded look */
+  
+  /* THE HIGHLIGHT: This creates the "cutout" look */
+  border: 10px solid #FDF6E3; 
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Responsive fix */
+@media (max-width: 900px) {
+  .gallery-container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .quote-box { 
+    position: relative; 
+    width: 100%; 
+    left: 0; 
+    top: 0;
+    margin: 20px 0;
+  }
+  .overlay-image-container {
+    display: none; /* Hide complex overlay on mobile */
+  }
+}
+
+.gallery-item-bottom {
+  grid-column: 1;
+  grid-row: 2;
+  position: relative; /* CRITICAL: This keeps the overlay image attached to this photo */
+  margin-top: 40px; 
+  width: 90%; 
+}
+
+.overlay-image-container {
+  position: absolute;
+  bottom: -10%;  /* Percentage based positioning */
+  right: -5%;   /* Push it slightly off the right edge */
+  width: 55%;    /* Scales with the parent image */
+  max-width: 300px;
+  z-index: 5;
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+/* =========================
+   REFINED SITE FOOTER
+========================= */
+.site-footer {
+  background: #081615; /* Slightly darker than the section above */
+  box-shadow: inset 0 20px 40px rgba(0,0,0,0.5); /* Creates a "step down" feel */
+  position: relative;
+}
+
+/* Add a gold "top cap" line */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #f5d88a, transparent);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footer-main-content {
+  display: grid;
+  /* Creates 3 columns: Brand takes 1.5 parts, others take 1 */
+  grid-template-columns: 1.5fr 1fr 1fr; 
+  gap: 60px;
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+/* Common Column Styling */
+.footer-column h4 {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Simple Underline for headers */
+.footer-column h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 1px;
+  background: #f5d88a;
+}
+
+/* Brand Column Fixes */
+.brand-col {
+  text-align: center; /* Keep logo and its text centered */
+  border-right: 1px solid rgba(245, 216, 138, 0.1);
+  padding-right: 40px;
+}
+
+.footer-logo-box {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 25px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(245, 216, 138, 0.3);
+  background: white;
+}
+
+.footer-logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer-info-text {
+  font-style: italic;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Navigation Links Vertical Stack */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-nav a, .learn-more-btn {
+  color: #f5d88a;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  font-size: 1rem;
+}
+
+.footer-nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Contact Details */
+.contact-details p {
+  margin: 0 0 10px 0;
+  opacity: 0.8;
+}
+
+.org-name {
+  font-weight: bold;
+  opacity: 1 !important;
+  font-size: 1.1rem;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(245, 216, 138, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+/* RESPONSIVE: Stack columns on tablets/phones */
+@media (max-width: 900px) {
+  .footer-main-content {
+    grid-template-columns: 1fr; /* Stack everything into 1 column */
+    text-align: center;
+    gap: 50px;
+  }
+  
+  .brand-col {
+    border-right: none;
+    padding-right: 0;
+  }
+  
+  .footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%); /* Center the underline on mobile */
+  }
+}
+
+/* ===================================================
+   MOBILE-ONLY STACKED TEXT (SCREEN < 991px)
+   This will NOT affect your desktop computer version.
+   =================================================== */
+
+@media (max-width: 600px) {
+  /* 1. Force the container to stack vertically and center */
+  .hero-pinned-content {
+    top: 100px !important; /* Adjust this to move the text up/down on phone */
+    height: auto;
+    display: flex;
+    justify-content: center;
+  
+  }
+
+  .hero-content-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    margin: 0 !important;
+    gap: 10px !important; /* Space between the two lines */
+    width: 100% !important;
+  }
+
+  /* 2. Strip the box, background, and shadows only for mobile */
+  
+
+  /* 3. Style the text to be clean and readable */
+  .info-box-mobile-clean h3 {
+    font-size: 1.2rem !important; /* Size from your screenshot */
+    line-height: 1.2 !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    color: white !important;
+    /* Soft shadow to ensure it's readable over the gold background */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+    margin: 0 !important;
+  }
+}
+@media (max-width: 991px) {
+  .hero-pinned-content {
+    top: 100px !important; 
+    
+    /* ADJUST THIS to move the text up or down */
+    /* 250px will put it roughly in the middle of the gold area */
+    transform: translateY(96px) !important; 
+    
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    position: sticky !important;
+    z-index: 1 !important;
+    pointer-events: none;
+  }
+
+  .hero-content-container {
+    flex-direction: column !important; 
+    align-items: center !important;
+    margin: 0 !important;
+    gap: 5em !important; /* Cursive fonts look better closer together */
+    width: 100% !important;
+  }
+
+  .info-box-mobile-clean {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 95% !important;
+    text-align: center !important;
+  }
+
+  .info-box-mobile-clean h3 {
+    /* THE FANCY FONT */
+    
+    font-size: 1.8rem !important; /* Cursive needs to be larger to be readable */
+    line-height: 1.2 !important;
+    font-weight: 400 !important;
+    text-transform: none !important; /* Keeps it from being all-caps */
+    color: white !important;
+    
+    /* Glow effect to make the fancy font pop */
+    text-shadow: 0 0 15px rgba(202, 163, 29, 0.8), 0 2px 5px rgba(0,0,0,0.5) !important;
+    margin: 0 !important;
+  }
+
+  /* ===================================================
+   RESPONSIVE EVENTS SECTION (Mobile Fix)
+   =================================================== */
+@media (max-width: 768px) {
+  .events-section {
+    padding: 60px 15px !important; /* Give more breathing room */
+    height: auto !important; /* Let content dictate height */
+    display: block !important; /* Switch from center flex to standard block */
+  }
+
+  .events-header {
+    font-size: 2.5rem !important; /* Shrink the 'Events' title slightly */
+    margin-bottom: 30px !important;
+  }
+
+  .events-container {
+    flex-direction: column !important; /* Stack boxes vertically */
+    align-items: center !important;
+    gap: 30px !important; /* Space between the stacked boxes */
+  }
+
+  .event-box {
+    width: 100% !important; /* Boxes take full width of phone */
+    margin-right: 0 !important; /* Reset desktop margin */
+    padding: 20px !important;
+    border: 1px solid rgba(245, 216, 138, 0.2); /* Subtle gold border */
+  }
+
+  .event-box img {
+    height: 200px !important; /* Constrain image height on mobile */
+    border-radius: 15px !important;
+  }
+
+  .event-box h3 {
+    font-size: 1.8rem !important;
+    margin-top: 10px;
+  }
+
+  .event-description {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    color: #ddd !important; /* Lighter color for better readability on dark */
+    padding: 0 10px;
+  }
+
+  .event-info {
+    font-size: 0.8rem !important;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 10px;
+  }
+
+  /* Fix the Arrow Bubble positioning for mobile */
+  .arrow-bubble {
+    position: relative !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: 40px auto 0 !important; /* Center it below the last box */
+    display: flex !important;
+  }
+}
+}
+
+
+.alternating-sections {
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.alt-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.alt-section.alt-left .alt-image { order: 0; }
+.alt-section.alt-left .alt-text { order: 1; }
+
+.alt-section.alt-right .alt-image { order: 1; }
+.alt-section.alt-right .alt-text { order: 0; }
+
+.alt-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+}
+
+.alt-text { max-width: 500px; }
+
+.alt-text h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+.alt-text p { font-size: 1rem; line-height: 1.5; }
+
+
+
+.full-width-image {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents unwanted scrollbars */
+}
+
+.full-width-image img {
+  width: 100%;
+  height: auto;     /* Maintains aspect ratio */
+  display: block;   /* Removes small gap at the bottom of images */
+  object-fit: cover; /* Ensures the image fills the space without stretching distortion */
+}
+
+/*GSAP SECTION!!!
+
+
+*/
+/* Container Settings */
+.alternating-section {
+  background-color: #0b1f1d;  /* match dark events background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 5%;
+  overflow: hidden;
+}
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 50px;
+}
+
+/* Reverse logic for desktop */
+.is-reversed .content-wrapper {
+  flex-direction: row-reverse;
+}
+/* Gold Card Styling from Screenshot */
+.gold-card {
+  padding: 8px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.05);
+ 
+}
+
+.gold-card img {
+  width: 100%;
+  max-width: 420px;   /* 👈 smaller, elegant size */
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+
+/* Text Styling */
+.text-container {
+  flex: 1;
+  color: white;
+  text-align: center;
+}
+
+
+
+.urdu-quote {
+  font-size: 2rem;
+  line-height: 1.6;
+  
+  padding: 20px;
+}
+
+/* Mobile Responsive (Stacking) */
+@media (max-width: 768px) {
+  .content-wrapper, .is-reversed .content-wrapper {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+  
+  .urdu-quote {
+    font-size: 1.4rem;
+  }
+}
+
+/*Footer Styling@@@@!!!!!*/
+
+.site-footer {
+  background: #0b1f1d;
+  color: #f5d88a;
+  padding: 80px 0 40px 0;
+  
+}
+
+.footer-container {
+  max-width: 1100px; /* Limits the spread so it doesn't look empty */
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footer-main-content {
+  display: flex;
+  justify-content: space-between; /* Pushes columns to opposite sides */
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+/* Left Column */
+.footer-left {
+  flex: 0 1 40%; /* Takes up 40% of the width */
+  text-align: center; /* Matches your image logo/text alignment */
+}
+
+/* 1. The Container (The Circle) */
+.footer-logo-box {
+  width: 200px;           /* Set a fixed width */
+  height: 200px;          /* Height must match width for a perfect circle */
+  margin: 0 auto 20px auto; /* Centers the circle and adds bottom spacing */
+  border-radius: 50%;     /* Makes the box circular */
+  overflow: hidden;       /* Essential: crops the image to the circle */
+  border: 2px solid rgba(245, 216, 138, 0.4); /* The gold ring seen in your image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff; /* Optional: adds a background if image has transparency */
+}
+
+/* 2. The Image (Inside the Circle) */
+.footer-logo-box img {
+  width: 100%;            /* Fills the width of the circle */
+  height: 100%;           /* Fills the height of the circle */
+  object-fit: cover;      /* Crops the image to fit without stretching */
+  display: block;
+}
+.footer-info-text {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.learn-more-btn {
+  color: #6a89cc;
+  text-decoration: none;
+}
+
+/* Right Column & Vertical Line */
+.footer-right {
+  flex: 0 1 50%; /* Takes up 50% of the width */
+  border-left: 1px solid rgba(245, 216, 138, 0.2); /* The vertical line */
+  padding-left: 50px; /* Space after the line */
+}
+
+.link-group h4 {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #f5d88a;
+}
+
+.link-group p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.links-inline a {
+  margin-right: 15px;
+  color: #6a89cc;
+  text-decoration: none;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  border-top: 1px solid rgba(245, 216, 138, 0.1);
+  padding-top: 30px;
+  font-size: 0.85rem;
+}
+
+/* Responsive Fluidity */
+@media (max-width: 850px) {
+  .footer-main-content {
+    flex-direction: column; /* Stack for tablet/mobile */
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left {
+    margin-bottom: 50px;
+    width: 100%;
+  }
+
+  .footer-right {
+    border-left: none; /* Remove line on mobile */
+    padding-left: 0;
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .hero-pinned-content {
+    top: 20px !important; 
+    transform: translateY(13%) !important; 
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    position: sticky !important;
+    z-index: 10 !important; 
+    pointer-events: none;
+    z-index: 1 !important;
+  }
+
+  .hero-content-container {
+    flex-direction: column !important; 
+    align-items: center !important;
+    margin: 0 !important;
+
+    gap: 0em !important; 
+    width: 100% !important;
+  }
+}
+@media (max-width: 991px) {
+  .hero-pinned-content {
+    top: 80px !important; 
+    transform: translateY(40px) !important; 
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    position: sticky !important;
+    pointer-events: none;
+    /* This ensures it stays behind the green card when you scroll */
+    z-index: 1 !important; 
+  }
+
+  .info-box-mobile-clean h3 {
+    /* Bodoni Moda is the peak of "fancy but readable" */
+    
+    
+    /* Bigger size for impact */
+    font-size: 2.3rem !important; 
+    
+    /* BIG gap between lines as requested */
+    line-height: 1.8 !important; 
+    
+    /* Spacing between letters makes it look more "designed" */
+    letter-spacing: 1px !important;
+    
+    font-weight: 500 !important;
+    font-style: italic; /* Italics make serifs look extra fancy */
+    text-transform: none !important; 
+    color: white !important;
+    
+    /* Stronger shadow so the thin parts of the letters don't disappear */
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9) !important;
+    
+    /* Space between the two blocks of text */
+    margin-bottom: 40px !important; 
+  }
+}
+
+/*KALAAM STYLES!!!*/
+/* ===== KalaamDetails Component Styles ===== */
+.kalaam-details {
+  max-width: 800px;       /* Limit width for readability */
+  margin: 40px auto;      /* Center horizontally and add vertical spacing */
+  padding: 30px 25px;     /* Inner spacing */
+  background-color: #fdf6f0; /* Soft off-white background */
+  border-radius: 15px;    /* Rounded corners */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Subtle shadow for depth */
+  text-align: center;     /* Center all text */
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kalaam-details:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.kalaam-details h2.kalaam-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333; /* Darker text for title */
+}
+
+.kalaam-details p.kalaam-poet {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #555; /* Slightly lighter text for poet */
+  font-style: italic;
+}
+
+
+.kalaam-details .kalaam-lines {
+  font-size: 1rem;
+  line-height: 1.7; /* Better readability */
+  color: #444;
+  white-space: pre-line; /* Preserve line breaks from server */
+  text-align: left; /* Make lines easier to read */
+  margin-top: 15px;
+}
+
+.kalaam-details .close-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background-color: #e07a5f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.kalaam-details .close-btn:hover {
+  background-color: #d45d3c;
+}
+
+
+
+/* Mobile Styles (Phones) 
+
+
+*/
+@media (max-width: 768px) {
+  /* Shrinks the "Peer E Rabbani Tera Hoga..." lines */
+  .info-box h3 {
+    font-size: 1.8rem !important; 
+    line-height: 1.4;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+ /* @media (max-width: 768px) {
+  .alternating-section,
+  .alternating-section .image-container,
+  .alternating-section .text-container {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+} */
+
+@media (max-width: 768px) {
+  .alternating-section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
+
+  
+}
+
